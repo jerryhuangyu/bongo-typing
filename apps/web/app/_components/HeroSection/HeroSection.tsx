@@ -20,14 +20,14 @@ const HeroSection = () => {
         <div className="flex gap-4 pt-4">
           <PixelButton
             href="#download"
-            className="bg-[#FF5C8D] text-white rounded-full"
+            className="bg-[#FF5C8D] text-white rounded-full shadow-md"
           >
             Download Now
           </PixelButton>
           <PixelButton
             href="#demo"
             variant="outline"
-            className="border-[#7DEDFF] text-[#333333] rounded-full"
+            className="border-[#7DEDFF] text-[#333333] rounded-full shadow-md"
           >
             Watch Demo
           </PixelButton>

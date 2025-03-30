@@ -1,5 +1,31 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
+const TYPING_DELAY_MS = 100;
+const DELETE_DELAY_MS = 50;
+const PAUSE_DELAY_MS = 1000;
+
+/**
+ * Simulates a typing and deleting animation
+ * cycling through a given array of phrases.
+ *
+ * This is especially useful for animated headers, hero sections, or
+ * dynamic intros in UIs that need to catch user attention.
+ *
+ * Timing behavior:
+ * - Typing delay per character: 100ms
+ * - Deleting delay per character: 50ms
+ * - Pause after typing and deleting: 1000ms
+ *
+ * @param phrases - An array of strings to type out and delete in a continuous loop
+ * @returns An object containing:
+ *   - `text`: the current animated string
+ *
+ * @example
+ * ```tsx
+ * const { text } = useTypingTextEffect(["Hello", "Welcome", "Enjoy!"]);
+ * return <h1>{text}</h1>;
+ * ```
+ */
 export function useTypingTextEffect(phrases: string[]) {
   const [text, setText] = useState("");
 
@@ -24,7 +50,7 @@ export function useTypingTextEffect(phrases: string[]) {
     if (!isDeleting && !isTypingComplete) {
       currentCharIndexRef.current++;
       setText(phrase.slice(0, currentCharIndexRef.current));
-      schedule(handleTyping, 100);
+      schedule(handleTyping, TYPING_DELAY_MS);
       return;
     }
 
@@ -32,7 +58,7 @@ export function useTypingTextEffect(phrases: string[]) {
       schedule(() => {
         isDeletingRef.current = true;
         handleTyping();
-      }, 1000); // Pause before deleting
+      }, PAUSE_DELAY_MS); // Pause before deleting
       return;
     }
 
@@ -40,7 +66,7 @@ export function useTypingTextEffect(phrases: string[]) {
     if (isDeleting && !isDeletingComplete) {
       currentCharIndexRef.current--;
       setText(phrase.slice(0, currentCharIndexRef.current));
-      schedule(handleTyping, 50);
+      schedule(handleTyping, DELETE_DELAY_MS);
       return;
     }
 
@@ -50,7 +76,7 @@ export function useTypingTextEffect(phrases: string[]) {
         currentPhraseIndexRef.current =
           (currentPhraseIndexRef.current + 1) % phrases.length;
         handleTyping();
-      }, 1000); // Pause before moving to next phrase
+      }, PAUSE_DELAY_MS); // Pause before moving to next phrase
       return;
     }
   }, [phrases, schedule]);
