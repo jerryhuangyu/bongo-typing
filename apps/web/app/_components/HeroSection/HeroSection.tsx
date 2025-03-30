@@ -34,22 +34,7 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="md:w-1/2 relative">
-        <div className="aspect-video bg-white rounded-3xl overflow-hidden relative shadow-lg border-4 border-[#FFE156]">
-          {/* background */}
-          <div
-            className="absolute w-full h-full opacity-40"
-            style={{
-              backgroundImage: `repeating-linear-gradient(45deg, #FF5C8D 0px, #FF5C8D 10px, 
-                                  transparent 10px, transparent 20px, #7DEDFF 20px, #7DEDFF 30px, 
-                                  transparent 30px, transparent 40px, #FFE156 40px, #FFE156 50px, 
-                                  transparent 50px, transparent 60px)`,
-              backgroundSize: "170px 169px",
-            }}
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <TypingDemo />
-          </div>
-        </div>
+        <TypingDemo />
         <div className="absolute -bottom-6 -right-6 bg-[#7DEDFF] p-3 rounded-full font-pixel text-sm rotate-3">
           Your typing buddy!
         </div>
