@@ -36,8 +36,8 @@ const characters = [
     name: "Yellow Cat",
     description:
       "Pop, pop, pop! Bubblegum Bongo adds a chewy, colorful twist to your typing sessions.",
-    color: "#7DEDFF",
-    accent: "#7DEDFF",
+    color: "#70C0E7",
+    accent: "#70C0E7",
     accessory: "Bubble Blower",
     image_bg: "/character/yellow-cat/bg.png",
     image_left_up: "/character/yellow-cat/left-up.png",
@@ -49,14 +49,27 @@ const characters = [
     name: "LGBT Cat",
     description:
       "A seasonal favorite! Candy Corn Bongo brings festive typing fun all year round.",
-    color: "#FFE156",
-    accent: "#FFE156",
+    color: "#D4ADCF",
+    accent: "#D4ADCF",
     accessory: "Candy Corn Hat",
     image_bg: "/character/lgbt-cat/bg.png",
     image_left_up: "/character/lgbt-cat/left-up.png",
     image_left_down: "/character/lgbt-cat/left-down.png",
     image_right_up: "/character/lgbt-cat/right-up.png",
     image_right_down: "/character/lgbt-cat/right-down.png",
+  },
+  {
+    name: "Classic Otter",
+    description:
+      "A seasonal favorite! Candy Corn Bongo brings festive typing fun all year round.",
+    color: "#FFE156",
+    accent: "#FFE156",
+    accessory: "Candy Corn Hat",
+    image_bg: "/character/otter/bg.png",
+    image_left_up: "/character/otter/left-up.png",
+    image_left_down: "/character/otter/left-down.png",
+    image_right_up: "/character/otter/right-up.png",
+    image_right_down: "/character/otter/right-down.png",
   },
 ];
 
@@ -73,62 +86,72 @@ export default function CharacterShowcase() {
     );
   };
 
-  const character = characters[activeIndex];
-
   return (
-    <div className="relative max-w-4xl mx-auto">
-      <div className="flex items-center">
+    <section className="relative w-full">
+      <div className="flex items-center justify-between mb-4">
+        <div className="absolute left-0 z-10 w-10 h-full bg-white/5 flex items-center justify-center backdrop-blur-[1.5px]" />
         <Button
           variant="outline"
           size="icon"
-          className="absolute left-0 z-10 rounded-full border-[#FFE156]"
+          className="absolute left-0 z-20 rounded-full bg-white shadow-md border-gray-300"
           onClick={prevCharacter}
+          aria-label="Previous character"
         >
           <ChevronLeft className="h-4 w-4" />
-          <span className="sr-only">Previous character</span>
+        </Button>
+
+        <div className="absolute right-0 z-10 w-10 h-full bg-white/5 flex items-center justify-center backdrop-blur-[1.5px]" />
+        <Button
+          variant="outline"
+          size="icon"
+          className="absolute right-0 z-20 rounded-full bg-white shadow-md border-gray-300"
+          onClick={nextCharacter}
+          aria-label="Next character"
+        >
+          <ChevronRight className="h-4 w-4" />
         </Button>
 
         <div className="w-full overflow-hidden px-10">
           <div
-            className="flex transition-transform duration-300 ease-in-out"
+            className="flex transition-transform duration-300 ease-out"
             style={{ transform: `translateX(-${activeIndex * 100}%)` }}
           >
-            {characters.map((char) => (
+            {characters.map((char, index) => (
               <div key={char.name} className="w-full flex-shrink-0 px-4">
                 <div
-                  className="bg-white rounded-3xl shadow-md overflow-hidden border-2"
+                  className="bg-white rounded-3xl shadow-md overflow-hidden border-2 flex flex-col md:flex-row"
                   style={{ borderColor: char.color }}
                 >
-                  <div className="flex flex-col md:flex-row">
-                    <div className="md:w-1/2 p-6">
-                      <h3
-                        className="font-pixel text-2xl mb-2"
-                        style={{ color: char.accent }}
-                      >
-                        {char.name}
-                      </h3>
-                      <p className="mb-4 text-[#333333]">{char.description}</p>
-                      <div className="flex gap-2 items-center">
-                        <span className="text-sm font-medium text-[#333333]">
-                          Accessory:
-                        </span>
-                        <span
-                          className="px-2 py-1 rounded-full text-sm"
-                          style={{
-                            backgroundColor: `${char.color}20`,
-                            color: char.accent,
-                          }}
-                        >
-                          {char.accessory}
-                        </span>
-                      </div>
-                    </div>
-                    <div
-                      className="md:w-1/2 aspect-square md:aspect-auto flex items-center justify-center p-8"
-                      style={{ backgroundColor: `${char.color}10` }}
+                  {/* <div className=""> */}
+                  <div className="md:w-1/2 p-6">
+                    <h3
+                      className="font-pixel text-2xl mb-2"
+                      style={{ color: char.accent }}
                     >
-                      {/* Character display */}
-                      <div className="relative w-64 h-44 flex items-center justify-center">
+                      {char.name}
+                    </h3>
+                    <p className="mb-4 text-[#333333]">{char.description}</p>
+                    <div className="flex gap-2 items-center">
+                      <span className="text-sm font-medium text-[#333333]">
+                        Accessory:
+                      </span>
+                      <span
+                        className="px-2 py-1 rounded-full text-sm"
+                        style={{
+                          backgroundColor: `${char.color}20`,
+                          color: char.accent,
+                        }}
+                      >
+                        {char.accessory}
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    className="md:w-1/2 aspect-square md:aspect-auto flex items-center justify-center p-8"
+                    style={{ backgroundColor: `${char.color}10` }}
+                  >
+                    <div className="w-64 h-64 flex items-center justify-center">
+                      <div className="relative w-full h-[160px]">
                         <Character
                           isLeftHandUp
                           isRightHandUp
@@ -138,32 +161,8 @@ export default function CharacterShowcase() {
                           rightUpSrc={char.image_right_up}
                           rightDownSrc={char.image_right_down}
                           width={300}
-                          height={153}
+                          height={148}
                         />
-
-                        {/* Character-specific accessory */}
-                        {/* {index === 1 && (
-                          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/4">
-                            <div className="w-16 h-16 bg-[#FF5C8D] rounded-full"></div>
-                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-20 bg-white rounded-full">
-                              <div className="absolute top-0 left-0 right-0 h-8 bg-[#FF5C8D] rounded-full"></div>
-                            </div>
-                          </div>
-                        )}
-                        {index === 2 && (
-                          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/4">
-                            <div className="w-20 h-20 rounded-full bg-[#7DEDFF] opacity-70"></div>
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#7DEDFF] opacity-50"></div>
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#7DEDFF] opacity-30"></div>
-                          </div>
-                        )}
-                        {index === 3 && (
-                          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                            <div className="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[30px] border-l-transparent border-r-transparent border-b-[#FFE156]"></div>
-                            <div className="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-[#FF8C42] mt-[-5px]"></div>
-                            <div className="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[10px] border-l-transparent border-r-transparent border-b-white mt-[-5px]"></div>
-                          </div>
-                        )} */}
                       </div>
                     </div>
                   </div>
@@ -172,23 +171,14 @@ export default function CharacterShowcase() {
             ))}
           </div>
         </div>
-
-        <Button
-          variant="outline"
-          size="icon"
-          className="absolute right-0 z-10 rounded-full border-[#FFE156]"
-          onClick={nextCharacter}
-        >
-          <ChevronRight className="h-4 w-4" />
-          <span className="sr-only">Next character</span>
-        </Button>
       </div>
 
       <div className="flex justify-center mt-4 gap-1">
         {characters.map((char, index) => (
           <button
-            key={index}
-            className={`w-3 h-3 rounded-full transition-colors`}
+            key={`dot-button-${char.name}`}
+            type="button"
+            className={"w-3 h-3 rounded-full transition-colors"}
             style={{
               backgroundColor: index === activeIndex ? char.accent : "#E0E0E0",
             }}
@@ -198,6 +188,6 @@ export default function CharacterShowcase() {
           </button>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
