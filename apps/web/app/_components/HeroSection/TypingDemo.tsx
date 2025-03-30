@@ -1,6 +1,7 @@
 "use client";
 
 import { useTypingTextEffect } from "@/hook/useTypingTextEffect";
+import { useCharacterStore } from "@/store/character";
 import Character from "./Character";
 
 const phrases = [
@@ -10,6 +11,12 @@ const phrases = [
 ];
 
 export default function TypingDemo() {
+  const bg = useCharacterStore.use.bg();
+  const leftUp = useCharacterStore.use.leftUpHand();
+  const leftDown = useCharacterStore.use.leftDownHand();
+  const rightUp = useCharacterStore.use.rightUpHand();
+  const rightDown = useCharacterStore.use.rightDownHand();
+
   const { text } = useTypingTextEffect(phrases);
 
   const isRightHandUp = text.length % 2 === 0;
@@ -45,7 +52,15 @@ export default function TypingDemo() {
           </div>
         </div>
 
-        <Character isLeftHandUp={isLeftHandUp} isRightHandUp={isRightHandUp} />
+        <Character
+          isLeftHandUp={isLeftHandUp}
+          isRightHandUp={isRightHandUp}
+          bgSrc={bg}
+          leftUpSrc={leftUp}
+          leftDownSrc={leftDown}
+          rightUpSrc={rightUp}
+          rightDownSrc={rightDown}
+        />
       </div>
     </div>
   );

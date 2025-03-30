@@ -13,11 +13,11 @@ type Character = {
 const useStore = create<Character>()(
   persist(
     () => ({
-      bg: "/character/cat-bg.png",
-      leftDownHand: "/character/cat-left-down.png",
-      leftUpHand: "/character/cat-left-up.png",
-      rightUpHand: "/character/cat-right-up.png",
-      rightDownHand: "/character/cat-right-down.png",
+      bg: "/character/cat/bg.png",
+      leftDownHand: "/character/cat/left-down.png",
+      leftUpHand: "/character/cat/left-up.png",
+      rightUpHand: "/character/cat/right-up.png",
+      rightDownHand: "/character/cat/right-down.png",
     }),
     {
       name: "character-storage",
