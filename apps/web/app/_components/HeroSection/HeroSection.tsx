@@ -1,6 +1,6 @@
 import PixelButton from "@/components/pixel-button";
-import TypingDemo from "@/components/typing-demo";
 import React from "react";
+import TypingDemo from "./TypingDemo";
 
 const HeroSection = () => {
   return (
@@ -11,11 +11,11 @@ const HeroSection = () => {
         </div>
         <h1 className="font-pixel text-4xl md:text-5xl lg:text-6xl leading-tight">
           Make typing <span className="text-[#FF5C8D]">sweet</span> with Bongo
-          Cat
+          Pals
         </h1>
         <p className="text-lg md:text-xl max-w-md">
-          Watch adorable cat paws react to your typing in real-time with
-          charming animations and candy-like design.
+          Watch adorable character react to your typing in real-time with
+          charming animations.
         </p>
         <div className="flex gap-4 pt-4">
           <PixelButton
@@ -35,6 +35,17 @@ const HeroSection = () => {
       </div>
       <div className="md:w-1/2 relative">
         <div className="aspect-video bg-white rounded-3xl overflow-hidden relative shadow-lg border-4 border-[#FFE156]">
+          {/* background */}
+          <div
+            className="absolute w-full h-full opacity-40"
+            style={{
+              backgroundImage: `repeating-linear-gradient(45deg, #FF5C8D 0px, #FF5C8D 10px, 
+                                  transparent 10px, transparent 20px, #7DEDFF 20px, #7DEDFF 30px, 
+                                  transparent 30px, transparent 40px, #FFE156 40px, #FFE156 50px, 
+                                  transparent 50px, transparent 60px)`,
+              backgroundSize: "170px 169px",
+            }}
+          />
           <div className="absolute inset-0 flex items-center justify-center">
             <TypingDemo />
           </div>
