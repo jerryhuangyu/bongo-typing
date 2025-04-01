@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -7,9 +8,13 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-2 mb-4 md:mb-0">
-            <div className="w-8 h-8 bg-[#FF5C8D] rounded-full flex items-center justify-center">
-              <span className="font-pixel text-white text-sm">B</span>
-            </div>
+            <Image
+              src="/logo.webp"
+              alt="bongo-typing"
+              width={30}
+              height={30}
+              className="rounded-full shadow-md bg-neutral-800/60 p-0.5 pt-1"
+            />
             <span className="font-pixel">Bongo Typing</span>
           </div>
 
