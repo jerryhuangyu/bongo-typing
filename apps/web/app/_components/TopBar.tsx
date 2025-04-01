@@ -15,7 +15,9 @@ const TopBar = () => {
           height={50}
           className="rounded-full shadow-md bg-neutral-800/60 p-0.5 pt-1"
         />
-        <h1 className="font-pixel text-xl md:text-2xl">Bongo Typing</h1>
+        <h1 className="font-candy text-neutral-600 text-xl md:text-2xl">
+          Bongo Typing
+        </h1>
       </div>
       <nav className="hidden md:flex gap-6">
         <Link
