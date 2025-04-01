@@ -112,7 +112,7 @@ export default function CharacterShowcase() {
           <ChevronRight className="h-4 w-4" />
         </Button>
 
-        <div className="w-full overflow-hidden px-10">
+        <div className="w-full overflow-hidden px-6 xs:px-10">
           <div
             className="flex transition-transform duration-300 ease-out"
             style={{ transform: `translateX(-${activeIndex * 100}%)` }}
@@ -150,7 +150,7 @@ export default function CharacterShowcase() {
                     className="md:w-1/2 aspect-auto flex items-center justify-center p-8"
                     style={{ backgroundColor: `${char.color}10` }}
                   >
-                    <div className="w-full h-20 flex items-center justify-center xs:h-64 xs:bg-black">
+                    <div className="w-full h-20 flex items-center justify-center xs:h-64">
                       <div className="relative w-full h-full mt-12">
                         <div
                           className={cn(
