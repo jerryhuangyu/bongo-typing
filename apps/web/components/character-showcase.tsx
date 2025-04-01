@@ -2,6 +2,7 @@
 
 import Character from "@/app/_components/HeroSection/Character";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
@@ -119,10 +120,9 @@ export default function CharacterShowcase() {
             {characters.map((char, index) => (
               <div key={char.name} className="w-full flex-shrink-0 px-4">
                 <div
-                  className="bg-white rounded-3xl shadow-md overflow-hidden border-2 flex flex-col md:flex-row"
+                  className="bg-white rounded-3xl shadow-md overflow-hidden border-2 flex flex-col md:flex-row h-full"
                   style={{ borderColor: char.color }}
                 >
-                  {/* <div className=""> */}
                   <div className="md:w-1/2 p-6">
                     <h3
                       className="font-pixel text-2xl mb-2"
@@ -147,22 +147,29 @@ export default function CharacterShowcase() {
                     </div>
                   </div>
                   <div
-                    className="md:w-1/2 aspect-square md:aspect-auto flex items-center justify-center p-8"
+                    className="md:w-1/2 aspect-auto flex items-center justify-center p-8"
                     style={{ backgroundColor: `${char.color}10` }}
                   >
-                    <div className="w-64 h-64 flex items-center justify-center">
-                      <div className="relative w-full h-[160px]">
-                        <Character
-                          isLeftHandUp
-                          isRightHandUp
-                          bgSrc={char.image_bg}
-                          leftUpSrc={char.image_left_up}
-                          leftDownSrc={char.image_left_down}
-                          rightUpSrc={char.image_right_up}
-                          rightDownSrc={char.image_right_down}
-                          width={300}
-                          height={148}
-                        />
+                    <div className="w-full h-20 flex items-center justify-center xs:h-64 xs:bg-black">
+                      <div className="relative w-full h-full mt-12">
+                        <div
+                          className={cn(
+                            "absolute inset-0",
+                            "xs:-translate-x-1/10 sm:-translate-x-1/9 md:-translate-x-1/40 lg:-translate-x-1/20 xl:-translate-x-1/5",
+                            "xs:-translate-y-3/8 sm:-translate-y-1/4 md:-translate-y-1/3 lg:-translate-y-1/4",
+                          )}
+                        >
+                          <Character
+                            isLeftHandUp
+                            isRightHandUp
+                            bgSrc={char.image_bg}
+                            leftUpSrc={char.image_left_up}
+                            leftDownSrc={char.image_left_down}
+                            rightUpSrc={char.image_right_up}
+                            rightDownSrc={char.image_right_down}
+                            className="h-full xs:h-32 sm:h-48 md:h-36 lg:h-48 xl:h-48"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>

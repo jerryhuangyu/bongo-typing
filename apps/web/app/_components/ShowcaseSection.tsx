@@ -11,8 +11,7 @@ const ShowcaseSection = () => {
           Get Your Typing Buddy
         </h2>
         <p className="max-w-2xl mx-auto text-lg">
-          Personalize your typing companion with different candy-themed
-          accessories
+          Personalize your Bongo Pal with cute hats, sparkles, and fun reactions
         </p>
       </div>
 
