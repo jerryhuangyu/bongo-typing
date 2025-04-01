@@ -1,4 +1,6 @@
+import BubblesButton from "@/components/BubblesButton";
 import PixelButton from "@/components/pixel-button";
+import { cn } from "@/lib/utils";
 import React from "react";
 import TypingDemo from "./TypingDemo";
 
@@ -6,31 +8,31 @@ const HeroSection = () => {
   return (
     <section className="container mx-auto py-12 md:py-20 px-4 flex flex-col md:flex-row items-center gap-8">
       <div className="md:w-1/2 space-y-6">
-        <div className="inline-block bg-[#7DEDFF] px-3 py-1 rounded-full font-pixel text-sm">
-          Type with a friend
+        <div className="text-neutral-600/80 font-candy">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl">Make typing</h1>
+          <h1 className="text-[#FF5C8D] font-extrabold text-6xl md:text-7xl lg:text-8xl">
+            sweet
+          </h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl">with Bongo Pals</h1>
         </div>
-        <h1 className="font-pixel text-4xl md:text-5xl lg:text-6xl leading-tight">
-          Make typing <span className="text-[#FF5C8D]">sweet</span> with Bongo
-          Pals
-        </h1>
         <p className="text-lg md:text-xl max-w-md">
           Watch adorable character react to your typing in real-time with
           charming animations.
         </p>
         <div className="flex gap-4 pt-4">
-          <PixelButton
+          <BubblesButton
             href="#download"
-            className="bg-[#FF5C8D] text-white rounded-full shadow-md"
+            className="bg-gradient-to-t from-pink-400 to-rose-400 text-white font-medium text-lg"
           >
             Download Now
-          </PixelButton>
-          <PixelButton
+          </BubblesButton>
+          <BubblesButton
             href="#demo"
-            variant="outline"
-            className="border-[#7DEDFF] text-[#333333] rounded-full shadow-md"
+            className="bg-transparent border-[#7DEDFF]"
+            disableBubbles
           >
             Watch Demo
-          </PixelButton>
+          </BubblesButton>
         </div>
       </div>
       <div className="md:w-1/2 relative">
