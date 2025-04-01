@@ -1,5 +1,6 @@
 import PixelButton from "@/components/pixel-button";
 import { DownloadIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -7,9 +8,13 @@ const TopBar = () => {
   return (
     <header className="container mx-auto py-6 px-4 flex justify-between items-center">
       <div className="flex items-center gap-2">
-        <div className="w-10 h-10 bg-[#FF5C8D] rounded-full flex items-center justify-center">
-          <span className="font-pixel text-white text-xl">B</span>
-        </div>
+        <Image
+          src="/logo.webp"
+          alt="bongo-typing"
+          width={50}
+          height={50}
+          className="rounded-full shadow-md bg-gray-800/20 p-0.5"
+        />
         <h1 className="font-pixel text-xl md:text-2xl">Bongo Typing</h1>
       </div>
       <nav className="hidden md:flex gap-6">
