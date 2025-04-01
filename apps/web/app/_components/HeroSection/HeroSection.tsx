@@ -58,7 +58,7 @@ const HeroSection = () => {
       </div>
       <div className="lg:w-1/2 w-full relative">
         <TypingDemo />
-        <div className="absolute -bottom-6 -right-6 bg-[#7DEDFF] p-3 rounded-full font-pixel text-sm rotate-3">
+        <div className="absolute -bottom-8 -right-6 bg-[#7DEDFF] p-2 rounded-full font-pixel text-sm rotate-3 sm:p-3">
           Your typing buddy!
         </div>
       </div>
