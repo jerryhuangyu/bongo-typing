@@ -7,7 +7,7 @@ import TopBar from "./_components/TopBar";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#FCFCFC] text-[#333333] flex flex-col">
+    <div className="min-h-screen bg-[#FCFCFC] text-[#333333] flex flex-col font-sans">
       <TopBar />
       <main className="flex-1">
         <HeroSection />
