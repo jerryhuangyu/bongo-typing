@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 type CharacterProps = {
   isLeftHandUp: boolean;
   isRightHandUp: boolean;
@@ -6,8 +8,7 @@ type CharacterProps = {
   leftDownSrc: string;
   rightUpSrc: string;
   rightDownSrc: string;
-  height?: number;
-  width?: number;
+  className?: string;
 };
 
 const Character = ({
@@ -18,8 +19,7 @@ const Character = ({
   leftUpSrc,
   rightDownSrc,
   rightUpSrc,
-  height = 128,
-  width = 216,
+  className = "",
 }: CharacterProps) => {
   return (
     <div className="absolute -bottom-1 right-0 isolate">
@@ -39,8 +39,7 @@ const Character = ({
 
       <img
         src={bgSrc}
-        style={{ width, height }}
-        className="h-32 z-10 py-0.5"
+        className={cn("h-32 z-10 py-0.5", className)}
         alt="basic-character"
       />
 

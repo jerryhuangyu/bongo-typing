@@ -32,7 +32,7 @@ const HeroSection = () => {
           Watch adorable character react to your typing in real-time with
           charming animations.
         </p>
-        <div className="flex gap-4 pt-4">
+        <div className="flex flex-col xs:flex-row gap-4 pt-4">
           <BubblesButton
             href="#download"
             className={cn(
