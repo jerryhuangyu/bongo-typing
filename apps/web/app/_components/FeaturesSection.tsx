@@ -13,8 +13,8 @@ const FeaturesSection = () => {
             Typing has never been this sweet
           </h2>
           <p className="max-w-2xl mx-auto text-lg">
-            Bongo Typing transforms your keyboard into a candy playground for an
-            adorable cat companion
+            Bongo Typing transforms your everyday typing into a delightful
+            experience with adorable companion.
           </p>
         </div>
 
@@ -25,8 +25,8 @@ const FeaturesSection = () => {
             </div>
             <h3 className="font-pixel text-xl mb-2">Real-time Reactions</h3>
             <p>
-              Watch Bongo's tiny paws mimic your keypresses instantly as you
-              type.
+              Bongo’s paws move with every keystroke — typing feels alive and
+              adorable.
             </p>
           </div>
 
@@ -34,10 +34,9 @@ const FeaturesSection = () => {
             <div className="w-12 h-12 bg-[#7DEDFF]/20 rounded-full flex items-center justify-center mb-4">
               <StarIcon className="w-6 h-6 text-[#7DEDFF]" />
             </div>
-            <h3 className="font-pixel text-xl mb-2">Collectible Items</h3>
+            <h3 className="font-pixel text-xl mb-2">Collectible Goodies</h3>
             <p>
-              Unlock cute hats, accessories, and special animations as you
-              improve your typing skills.
+              Unlock hats, sparkles, and more as you type. Sweet rewards await!
             </p>
           </div>
 
@@ -45,10 +44,9 @@ const FeaturesSection = () => {
             <div className="w-12 h-12 bg-[#FFE156]/20 rounded-full flex items-center justify-center mb-4">
               <PaletteIcon className="w-6 h-6 text-[#FFE156]" />
             </div>
-            <h3 className="font-pixel text-xl mb-2">Light & Efficient</h3>
+            <h3 className="font-pixel text-xl mb-2">Privacy First</h3>
             <p>
-              Minimal system resource usage means your typing buddy won't slow
-              down your work.
+              No tracking. All data stays on your device. Just fun, no fuss.
             </p>
           </div>
         </div>
