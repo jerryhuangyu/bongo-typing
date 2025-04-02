@@ -19,7 +19,7 @@ const TopBar = () => {
           Bongo Typing
         </h1>
       </div>
-      <nav className="hidden md:flex gap-6">
+      <nav className="hidden md:flex gap-6 items-center">
         <Link
           href="#features"
           className="font-pixel hover:text-[#FF5C8D] transition-colors"
@@ -32,17 +32,11 @@ const TopBar = () => {
         >
           Characters
         </Link>
-        <Link
-          href="#download"
-          className="font-pixel hover:text-[#FF5C8D] transition-colors"
-        >
+        <PixelButton href="#download" className="bg-[#FF5C8D] text-white">
+          <DownloadIcon className="w-4 h-4 mr-2" />
           Download
-        </Link>
+        </PixelButton>
       </nav>
-      <PixelButton href="#download" className="bg-[#FF5C8D] text-white">
-        <DownloadIcon className="w-4 h-4 mr-2" />
-        Download
-      </PixelButton>
     </header>
   );
 };
