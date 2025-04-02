@@ -1,7 +1,7 @@
-import CharacterShowcase from "@/components/character-showcase";
 import PixelButton from "@/components/pixel-button";
 import { HeartIcon } from "lucide-react";
 import React from "react";
+import CharacterShowcase from "./CharacterShowcase";
 
 const ShowcaseSection = () => {
   return (

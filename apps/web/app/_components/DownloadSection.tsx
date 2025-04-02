@@ -14,7 +14,7 @@ const DownloadSection = () => {
         </h2>
         <p className="max-w-2xl mx-auto text-lg mb-8">
           Download Bongo Typing now and transform your typing experience with an
-          adorable cat companion
+          adorable companion
         </p>
 
         <div className="flex flex-col md:flex-row gap-6 justify-center">
