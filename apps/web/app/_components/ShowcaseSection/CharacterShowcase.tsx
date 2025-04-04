@@ -1,6 +1,6 @@
 "use client";
 
-import Character from "@/app/_components/HeroSection/Character";
+import Character from "@/components/Character";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";

@@ -22,7 +22,7 @@ const Character = ({
   className = "",
 }: CharacterProps) => {
   return (
-    <div className="absolute -bottom-1 right-0 isolate">
+    <div className="absolute bottom-0 right-0 isolate">
       {isLeftHandUp ? (
         <img
           src={leftUpSrc}
