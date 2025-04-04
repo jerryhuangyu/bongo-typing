@@ -47,7 +47,7 @@ const DemoSection = () => {
           <TypingWindow text={text} />
         </div>
       </div>
-      <div className="main-typing-character aspect-video w-[85%] sm:w-[80%] md:w-[60%] xl:w-[40%] fixed bottom-[40%] sm:bottom-[36%] z-1000 rounded-3xl overflow-hidden">
+      <div className="main-typing-character pointer-events-none aspect-video w-[85%] sm:w-[80%] md:w-[60%] xl:w-[40%] fixed bottom-[40%] sm:bottom-[36%] z-1000 rounded-3xl overflow-hidden">
         <Character
           isLeftHandUp={isLeftHandUp}
           isRightHandUp={isRightHandUp}

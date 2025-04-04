@@ -1,5 +1,6 @@
 import BubblesButton from "@/components/BubblesButton";
 import { cn } from "@/lib/utils";
+import { makeRandomCharacter } from "@/store/character";
 import React from "react";
 
 const HeroSection = () => {
@@ -43,15 +44,15 @@ const HeroSection = () => {
             Download Now
           </BubblesButton>
           <BubblesButton
-            href="#demo"
             className={cn(
               "bg-transparent border-[#7DEDFF]",
               "px-5 py-2",
               "lg:px-8 lg:py-3",
             )}
+            onClick={makeRandomCharacter}
             disableBubbles
           >
-            Watch Demo
+            Random Pals
           </BubblesButton>
         </div>
       </div>
