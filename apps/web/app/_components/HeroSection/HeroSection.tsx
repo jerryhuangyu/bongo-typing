@@ -1,12 +1,11 @@
 import BubblesButton from "@/components/BubblesButton";
 import { cn } from "@/lib/utils";
 import React from "react";
-import TypingDemo from "./TypingDemo";
 
 const HeroSection = () => {
   return (
-    <section className="container mx-auto py-12 px-10 flex flex-col items-center gap-28 lg:flex-row lg:px-20 lg:gap-8">
-      <div className="lg:w-1/2 space-y-6">
+    <section className="bg-gradient-to-b from-[#FCFCFC] to-[#F4F4F4] w-full pt-12 pb-24">
+      <div className="container mx-auto lg:w-1/2 space-y-6 px-10 lg:px-20">
         <div className="text-neutral-600/80 font-candy">
           <h1 className="text-2xl md:text-3xl lg:text-4xl">Make typing</h1>
           <h1
@@ -54,12 +53,6 @@ const HeroSection = () => {
           >
             Watch Demo
           </BubblesButton>
-        </div>
-      </div>
-      <div className="lg:w-1/2 w-full relative">
-        <TypingDemo />
-        <div className="absolute -bottom-8 -right-6 bg-[#7DEDFF] p-2 rounded-full font-pixel text-sm rotate-3 sm:p-3">
-          Your typing buddy!
         </div>
       </div>
     </section>
