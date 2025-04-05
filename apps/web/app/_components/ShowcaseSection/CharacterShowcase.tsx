@@ -10,10 +10,10 @@ const characters = [
   {
     name: "Classic Cat",
     description:
-      "The original typing buddy. Bongo's tiny paws dance across your keyboard with enthusiasm.",
+      "The original typing buddy. Tiny paws dance across your keyboard with enthusiasm.",
     color: "#FF5C8D",
     accent: "#FF5C8D",
-    accessory: "None",
+    accessory: "Emergency Button",
     image_bg: "/character/cat/bg.png",
     image_left_up: "/character/cat/left-up.png",
     image_left_down: "/character/cat/left-down.png",
@@ -23,10 +23,10 @@ const characters = [
   {
     name: "Black Cat",
     description:
-      "Sweet as can be! Lollipop Bongo brings sugary delight to your typing experience.",
+      "Mysterious and sweet. Black Cat casts a charming spell on your typing sessions.",
     color: "#FF8C42",
     accent: "#FF8C42",
-    accessory: "Lollipop Hat",
+    accessory: "Emergency Button",
     image_bg: "/character/black-cat/bg.png",
     image_left_up: "/character/black-cat/left-up.png",
     image_left_down: "/character/black-cat/left-down.png",
@@ -36,10 +36,10 @@ const characters = [
   {
     name: "Yellow Cat",
     description:
-      "Pop, pop, pop! Bubblegum Bongo adds a chewy, colorful twist to your typing sessions.",
+      "Bright and bouncy! Yellow Cat energizes your typing with a sunny burst of fun.",
     color: "#70C0E7",
     accent: "#70C0E7",
-    accessory: "Bubble Blower",
+    accessory: "Emergency Button",
     image_bg: "/character/yellow-cat/bg.png",
     image_left_up: "/character/yellow-cat/left-up.png",
     image_left_down: "/character/yellow-cat/left-down.png",
@@ -49,10 +49,10 @@ const characters = [
   {
     name: "LGBT Cat",
     description:
-      "A seasonal favorite! Candy Corn Bongo brings festive typing fun all year round.",
+      "Proud and playful! LGBT Cat celebrates every keystroke with rainbow joy.",
     color: "#D4ADCF",
     accent: "#D4ADCF",
-    accessory: "Candy Corn Hat",
+    accessory: "Emergency Button",
     image_bg: "/character/lgbt-cat/bg.png",
     image_left_up: "/character/lgbt-cat/left-up.png",
     image_left_down: "/character/lgbt-cat/left-down.png",
@@ -62,10 +62,11 @@ const characters = [
   {
     name: "Classic Otter",
     description:
-      "A seasonal favorite! Candy Corn Bongo brings festive typing fun all year round.",
+      "Splish splash! Classic Otter Bongo brings waves of joy to every keyboard session.",
+
     color: "#FFE156",
     accent: "#FFE156",
-    accessory: "Candy Corn Hat",
+    accessory: "None",
     image_bg: "/character/otter/bg.png",
     image_left_up: "/character/otter/left-up.png",
     image_left_down: "/character/otter/left-down.png",

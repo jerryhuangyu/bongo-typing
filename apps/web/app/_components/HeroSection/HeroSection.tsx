@@ -52,7 +52,7 @@ const HeroSection = () => {
             onClick={makeRandomCharacter}
             disableBubbles
           >
-            Random Pals
+            Try Random
           </BubblesButton>
         </div>
       </div>

@@ -20,10 +20,10 @@ const DownloadSection = () => {
         <div className="flex flex-col md:flex-row gap-6 justify-center">
           <PixelButton
             href="#"
-            className="bg-white text-[#FF5C8D] rounded-full"
+            className="bg-white text-[#70C0E7] rounded-full"
           >
             <DownloadIcon className="w-4 h-4 mr-2" />
-            Download for Windows
+            Download for Linux(Coming Soon)
           </PixelButton>
           <PixelButton
             href="#"
@@ -34,17 +34,17 @@ const DownloadSection = () => {
           </PixelButton>
           <PixelButton
             href="#"
-            className="bg-white text-[#7DEDFF] rounded-full"
+            className="bg-white text-[#FF5C8D] rounded-full"
           >
             <DownloadIcon className="w-4 h-4 mr-2" />
-            Download for Linux
+            Download for Windows(Coming Soon)
           </PixelButton>
         </div>
 
-        <div className="mt-8 text-sm opacity-80">
+        {/* <div className="mt-8 text-sm opacity-80">
           Version 1.0.2 • 15MB • Requires Windows 10/macOS 10.14/Ubuntu 18.04 or
           newer
-        </div>
+        </div> */}
       </div>
     </section>
   );
