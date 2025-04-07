@@ -18,27 +18,26 @@ const DownloadSection = () => {
         </p>
 
         <div className="flex flex-col md:flex-row gap-6 justify-center">
-          <PixelButton
+          {/* <PixelButton
             href="#"
             className="bg-white text-[#70C0E7] rounded-full"
           >
             <DownloadIcon className="w-4 h-4 mr-2" />
             Download for Linux(Coming Soon)
-          </PixelButton>
-          <PixelButton
-            href="#"
-            className="bg-white text-[#FF8C42] rounded-full"
-          >
-            <DownloadIcon className="w-4 h-4 mr-2" />
-            Download for Mac
-          </PixelButton>
-          <PixelButton
+          </PixelButton> */}
+          <a href="/release/Bongo Typing-0.0.1.dmg" download>
+            <PixelButton className="bg-white text-[#FF8C42] rounded-full">
+              <DownloadIcon className="w-4 h-4 mr-2" />
+              Download for Mac
+            </PixelButton>
+          </a>
+          {/* <PixelButton
             href="#"
             className="bg-white text-[#FF5C8D] rounded-full"
           >
             <DownloadIcon className="w-4 h-4 mr-2" />
             Download for Windows(Coming Soon)
-          </PixelButton>
+          </PixelButton> */}
         </div>
 
         {/* <div className="mt-8 text-sm opacity-80">

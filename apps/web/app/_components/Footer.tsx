@@ -4,8 +4,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#FCFCFC] w-full z-50 py-8 border-t-2 border-[#FFE156]/30">
-      <div className="container mx-auto px-46">
+    <footer className="bg-[#FCFCFC] w-full z-50 py-8 border-t-2 border-[#FFE156]/30 mb-[88vh]">
+      <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-2 mb-4 md:mb-0">
             <Image
