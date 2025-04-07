@@ -3,7 +3,10 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build:desktop": "turbo run desktop#build",
     "dev": "turbo run dev",
+    "dev:web": "turbo run web#dev",
+    "dev:desktop": "turbo run desktop#dev",
     "lint": "turbo run lint",
     "check-types": "turbo run check-types",
     "format-and-lint": "biome check .",
