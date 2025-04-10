@@ -5,56 +5,69 @@ on:
     tags:
       - v*.*.*
 
+permissions:
+  contents: write
+
 jobs:
   release:
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [macos-latest]
+        # os: [macos-latest, windows-latest]
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install Python distutils (macOS)
+        if: matrix.os == 'macos-latest'
+        run: |
+          brew install python@3.11
+          echo "PYTHON=/opt/homebrew/opt/python@3.11/bin/python3.11" >> $GITHUB_ENV
+          /opt/homebrew/opt/python@3.11/bin/python3.11 -m ensurepip --upgrade
+          /opt/homebrew/opt/python@3.11/bin/python3.11 -m pip install --upgrade setuptools
 
       - name: Install Dependencies
-        run: npm install
-        working-directory: ./apps/desktop
-
-      - name: build-linux
-        if: matrix.os == 'ubuntu-latest'
-        run: npm run build:linux
+        run: pnpm install
         working-directory: ./apps/desktop
 
       - name: build-mac
         if: matrix.os == 'macos-latest'
-        run: npm run build:mac
+        run: pnpm run build:mac
         working-directory: ./apps/desktop
+        env:
+          PYTHON: ${{ env.PYTHON }}
 
-      - name: build-win
-        if: matrix.os == 'windows-latest'
-        run: npm run build:win
-        working-directory: ./apps/desktop
+      # - name: build-win
+      #   if: matrix.os == 'windows-latest'
+      #   run: pnpm run build:win
+      #   working-directory: ./apps/desktop
 
       - name: release
         uses: softprops/action-gh-release@v1
         with:
           draft: true
           files: |
-            dist/*.exe
-            dist/*.zip
-            dist/*.dmg
-            dist/*.AppImage
-            dist/*.snap
-            dist/*.deb
-            dist/*.rpm
-            dist/*.tar.gz
-            dist/*.yml
-            dist/*.blockmap
+            apps/desktop/dist/*.exe
+            apps/desktop/dist/*.zip
+            apps/desktop/dist/*.dmg
+            apps/desktop/dist/*.AppImage
+            apps/desktop/dist/*.snap
+            apps/desktop/dist/*.deb
+            apps/desktop/dist/*.rpm
+            apps/desktop/dist/*.tar.gz
+            apps/desktop/dist/*.yml
+            apps/desktop/dist/*.blockmap
         env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
