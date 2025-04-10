@@ -1,7 +1,7 @@
 "use client";
 
 import Character from "@/components/Character";
-import { useTypingTextEffect } from "@/hook/useTypingTextEffect";
+import { useTypingTextEffect } from "@/hooks/useTypingTextEffect";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { useCharacterStore } from "@/store/character";
 import React from "react";
